@@ -6,8 +6,30 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import psycopg2
 
 
-class CrawlerPipeline:
+class PostgresPipeline:
+
+    # def __init__(self):
+    #     self.create_connection()
+    #
+    # def create_connection(self):
+    #     hostname = 'localhost'
+    #     username = 'postgres'
+    #     password = '123456'
+    #     database = 'quotes'
+    #
+    #     self.connection = psycopg2.connect(
+    #         host=hostname,
+    #         user=username,
+    #         password=password,
+    #         dbname=database
+    #     )
+    #
+    #     self.cur = self.connection.cursor()
+    #
+
     def process_item(self, item, spider):
-        return item
+        return
+

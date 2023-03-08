@@ -58,11 +58,11 @@ class CryptoCurrencyCoinGeckoParse(CryptoCurrencyParseBase):
 
     @property
     def _get_contracts(self):
-        xpath = '//div[@data-controller="coin-contract-address"]/span[contains(text(), "Contract")]' \
+        xpath = '//div[@data-controller="cryptocurrency-contract-address"]/span[contains(text(), "Contract")]' \
                 '[1]/following-sibling::*//div[contains(@class, "tw-items-center") and not(@id="dropdownMenuButton")]'
         return [ContractParse(response=i).get_item() for i in self.response.xpath(xpath)]
 
     @property
     def _get_tags(self):
-        xpath = '//div[contains(@class, "coin-link-row")]/span[contains(text(), "Tags")]/following-sibling::*//a'
+        xpath = '//div[contains(@class, "cryptocurrency-link-row")]/span[contains(text(), "Tags")]/following-sibling::*//a'
         return [TagParse(response=i).get_item() for i in self.response.xpath(xpath)]
