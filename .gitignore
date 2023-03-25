@@ -123,3 +123,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Dev env
+.idea
+
+test.py
