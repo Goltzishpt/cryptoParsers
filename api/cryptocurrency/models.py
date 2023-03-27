@@ -15,9 +15,11 @@ class CryptoCurrencyModel(Model):
     wallets = ArrayField(element_type='text', null=True)
     community = ArrayField(element_type='text', null=True)
     tags = ArrayField(element_type='text', null=True)
+    market = fields.ForeignKeyField("models.MarketModels", related_name='market', on_delete=fields.CASCADE)
 
     class Meta:
         table = 'cryptocurrency'
+        unique_together = ('name', 'symbol', 'market')
 
     @classmethod
     async def cryptocurrency_create(cls, data: CryptoCurrencySchemas):
