@@ -4,7 +4,7 @@ from loader import app
 router = APIRouter()
 
 
-@router.get('/item')
+@router.get('/')
 def get_item():
     return {'item': 'value'}
 

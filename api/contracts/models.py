@@ -8,11 +8,22 @@ class ContractModel(Model):
     chain_id = fields.IntField(null=True)
     decimal = fields.IntField(null=True)
     image = fields.CharField(max_length=512, null=True)
-    cryptocurrency = fields.ForeignKeyField("models.CryptoCurrencyModel", on_delete=fields.CASCADE)
+    cryptocurrency = fields.ForeignKeyField("models.CryptoCurrencyModel", related_name="contracts", on_delete=fields.CASCADE)
 
     class Meta:
         table = 'contract'
 
-    async def contract_create(self):
-        pass
+    @classmethod
+    async def contract_create(cls, data: ContractsSchemas):
+        contracts = cls(
+            name=data.name,
+            contracts_adress=data.contract_address,
+            chain_id=data.chain_id,
+            decimal=data.decimal,
+            image=data.image,
+            cryptocurrency_id=data.cryptocurrency_id
+        )
+
+        await contracts.save()
+        return contracts
 

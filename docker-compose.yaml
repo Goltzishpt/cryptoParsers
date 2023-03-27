@@ -6,12 +6,15 @@ services:
     container_name: local_postgres
     restart: always
     ports:
-      - "5432:5432"
+      - "5435:5432"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: user_crypto
+      POSTGRES_PASSWORD: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+
     volumes:
       - local_pgdata:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
 
   pgadmin:
     image: dpage/pgadmin4
@@ -20,8 +23,8 @@ services:
     ports:
       - "5050:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@email.com
-      PGADMIN_DEFAULT_PASSWORD: admin1
+      PGADMIN_DEFAULT_EMAIL: user_crypto@email.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 
