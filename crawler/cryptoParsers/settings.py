@@ -12,6 +12,13 @@ BOT_NAME = 'crawler'
 SPIDER_MODULES = ['crawler.spiders']
 NEWSPIDER_MODULE = 'crawler.spiders'
 
+DB_CONFIG = {
+    'host': 'localhost',
+    'post': 5435,
+    'user': 'user',
+    'password': 'admin',
+    'database': 'postgres'
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'Scrapy/1.3.0 (+http://scrapy.org)'
