@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
 from settings import config
 
-
+'test commit'
 TORTOISE_ORM = {
     "connections": {
         "default": config.db_uri
