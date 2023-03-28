@@ -15,7 +15,7 @@ class CryptoCurrencyModel(Model):
     wallets = ArrayField(element_type='text', null=True)
     community = ArrayField(element_type='text', null=True)
     tags = ArrayField(element_type='text', null=True)
-    market = fields.ForeignKeyField("models.MarketModels", related_name='market', on_delete=fields.CASCADE)
+    market = fields.ForeignKeyField('models.MarketModel', related_name='cryptocurrencies', on_delete=fields.CASCADE)
 
     class Meta:
         table = 'cryptocurrency'

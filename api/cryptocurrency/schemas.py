@@ -1,5 +1,4 @@
 from typing import Optional, List
-
 from pydantic import BaseModel, validator
 
 
@@ -15,3 +14,4 @@ class CryptoCurrencySchemas(BaseModel):
     wallets: Optional[List[str]] = None
     community: Optional[List[str]] = None
     tags: Optional[List[str]] = None
+    market_id: Optional[int]

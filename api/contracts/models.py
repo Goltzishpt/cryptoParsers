@@ -17,7 +17,7 @@ class ContractModel(Model):
     async def contract_create(cls, data: ContractsSchemas):
         contracts = cls(
             name=data.name,
-            contracts_adress=data.contract_address,
+            contract_adress=data.contract_address,
             chain_id=data.chain_id,
             decimal=data.decimal,
             image=data.image,

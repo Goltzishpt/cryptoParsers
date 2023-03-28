@@ -1,9 +1,6 @@
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
-from tortoise import Tortoise, run_async
-from api.cryptocurrency.models import CryptoCurrencyModel
 from settings import config
-from tortoise.exceptions import IntegrityError
 
 
 TORTOISE_ORM = {
@@ -12,7 +9,7 @@ TORTOISE_ORM = {
     },
     "apps": {
         "models": {
-            "models": ["cryptocurrency.models", "contracts.models"],
+            "models": ["cryptocurrency.models", "contracts.models", "market.models", "aerich.models"],
             "default_connection": "default",
         },
     },
@@ -27,6 +24,7 @@ connect = {
         "models": [
             "cryptocurrency.models",
             "contracts.models",
+            "market.models"
         ],
     },
     "generate_schemas": True,
