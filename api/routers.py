@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from loader import app
+from main import app
 
 router = APIRouter()
 

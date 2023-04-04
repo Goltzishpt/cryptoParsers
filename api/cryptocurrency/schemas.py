@@ -15,3 +15,4 @@ class CryptoCurrencySchemas(BaseModel):
     community: Optional[List[str]] = None
     tags: Optional[List[str]] = None
     market_id: Optional[int]
+    cm_id: Optional[int] = None

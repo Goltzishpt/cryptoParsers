@@ -16,6 +16,7 @@ class CryptoCurrencyModel(Model):
     community = ArrayField(element_type='text', null=True)
     tags = ArrayField(element_type='text', null=True)
     market = fields.ForeignKeyField('models.MarketModel', related_name='cryptocurrencies', on_delete=fields.CASCADE)
+    cm_id = fields.IntField(null=True)
 
     class Meta:
         table = 'cryptocurrency'
@@ -34,7 +35,9 @@ class CryptoCurrencyModel(Model):
             explorers=data.explorers,
             wallets=data.wallets,
             community=data.community,
-            tags=data.tags
+            tags=data.tags,
+            market=data.market_id,
+            cm_id=data.cm_id
         )
         await cryptocurrency.save()
         return cryptocurrency
