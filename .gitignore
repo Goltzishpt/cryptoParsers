@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
 # C extensions
 *.so
 
@@ -126,5 +125,5 @@ dmypy.json
 
 # Dev env
 .idea
-
+migrations/
 test.py
